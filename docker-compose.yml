@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  identity_service:
+    build:
+      context: .              # This specifies the build context (current directory)
+      dockerfile: Dockerfile   # Path to the Dockerfile (relative to context)
+    container_name: app_identity_service
+    image: app_identity_service:latest
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/identity_service
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 12345
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./target:/app/target  # Mounts the target directory to the container, allowing for easier updates
+    restart: unless-stopped    # Restart policy in case the container stops unexpectedly
+    deploy:
+      resources:
+        limits:
+          cpus: '0.3' # it means using limit 30% cpu
+          memory: 300m # it means using limit 30% ram
+    networks:
+      - network_shared
+  db:
+    image: postgres:latest
+    container_name: db
+    environment:
+      POSTGRES_DB: identity_service
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+    ports:
+      - "5432:5432"
+    networks:
+      - network_shared
+networks:
+  network_shared:
+    driver: bridge
