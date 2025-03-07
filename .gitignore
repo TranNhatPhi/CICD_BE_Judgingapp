@@ -1,5 +1,6 @@
 HELP.md
 target/
+!target/judging-0.0.1-SNAPSHOT.jar
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/

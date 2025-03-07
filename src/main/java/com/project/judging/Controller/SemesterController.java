@@ -14,7 +14,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/semesters")
 public class SemesterController extends BaseController {
-
     private final SemesterService semesterService;
     private final SemesterMapper semesterMapper;
 

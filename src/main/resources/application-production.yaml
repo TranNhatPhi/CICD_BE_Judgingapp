@@ -2,14 +2,14 @@ spring:
   application:
     name: judging
   datasource:
-    #    url: jdbc:postgresql://localhost:5432/judgingV3
-    #    username: postgres
-    #    password: Elvans@0309
-    url: jdbc:postgresql://db:5432/identity_service
+#    url: jdbc:postgresql://localhost:5432/judgingV3
+#    username: postgres
+#    password: Elvans@0309
+    url: jdbc:postgresql://localhost:5433/judgingapp
     username: postgres
     password: 12345
     driver-class-name: org.postgresql.Driver
-  #    initalization-mode: never
+#    initalization-mode: never
   jpa:
     hibernate:
       ddl-auto: update
