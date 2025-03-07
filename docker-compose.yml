@@ -23,17 +23,17 @@ services:
           memory: 300m # it means using limit 30% ram
     networks:
       - network_shared
-  db:
-    image: postgres:latest
-    container_name: db
-    environment:
-      POSTGRES_DB: identity_service
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 12345
-    ports:
-      - "5432:5432"
-    networks:
-      - network_shared
-networks:
-  network_shared:
-    driver: bridge
+#  db:
+#    image: postgres:latest
+#    container_name: db
+#    environment:
+#      POSTGRES_DB: identity_service
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: 12345
+#    ports:
+#      - "5432:5432"
+#    networks:
+#      - network_shared
+#networks:
+#  network_shared:
+#    driver: bridge
