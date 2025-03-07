@@ -5,7 +5,7 @@ spring:
     #    url: jdbc:postgresql://localhost:5432/judgingV3
     #    username: postgres
     #    password: Elvans@0309
-    url: jdbc:postgresql://db:5432/identity_service
+    url: jdbc:postgresql://51.79.161.34:5432/identity_service
     username: postgres
     password: 12345
     driver-class-name: org.postgresql.Driver
