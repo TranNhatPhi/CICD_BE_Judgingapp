@@ -13,8 +13,6 @@ services:
       SPRING_DATASOURCE_PASSWORD: 12345
     ports:
       - "9000:9000"
-    volumes:
-      - ./target:/app/target  # Mounts the target directory to the container, allowing for easier updates
     restart: unless-stopped    # Restart policy in case the container stops unexpectedly
     deploy:
       resources:
@@ -23,17 +21,6 @@ services:
           memory: 300m # it means using limit 30% ram
     networks:
       - network_shared
-#  db:
-#    image: postgres:latest
-#    container_name: db
-#    environment:
-#      POSTGRES_DB: identity_service
-#      POSTGRES_USER: postgres
-#      POSTGRES_PASSWORD: 12345
-#    ports:
-#      - "5432:5432"
-#    networks:
-#      - network_shared
-#networks:
-#  network_shared:
-#    driver: bridge
+networks:
+  network_shared:
+    driver: bridge
