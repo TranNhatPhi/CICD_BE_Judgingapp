@@ -30,6 +30,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/auth")
 @Tag(name="Authentication Management", description = "Authentication Management APIs")
+@CrossOrigin(origins = "*")
 public class AuthenticationController {
 
     private static final Logger log = LoggerFactory.getLogger(AuthenticationController.class);

@@ -28,4 +28,4 @@ server:
 
 frontend:
   domain:
-    url: ${FRONTEND_DOMAIN_URL:http://51.79.161.34:5173}
+    url: ${FRONTEND_DOMAIN_URL:http://localhost:5173}
