@@ -11,6 +11,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://51.79.161.34:5432/identity_service
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: 12345
+      FRONTEND_DOMAIN_URL: https://nhatphi-nginx.io.vn
     ports:
       - "9000:9000"
     restart: unless-stopped    # Restart policy in case the container stops unexpectedly
