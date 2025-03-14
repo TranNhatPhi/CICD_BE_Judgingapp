@@ -1,13 +1,12 @@
-FROM maven:3.8-openjdk-17 AS build
+# Stage 1: Build ứng dụng Spring Boot
+FROM maven:3.9.6-eclipse-temurin-21-alpine AS build
 WORKDIR /app
-COPY pom.xml .
-COPY src ./src
+COPY . /app
 RUN mvn clean package -DskipTests
 
-## use jdk
-FROM openjdk:17
+# Stage 2: Chạy ứng dụng Spring Boot
+FROM eclipse-temurin:21-jdk-alpine
 WORKDIR /app
-
-COPY target/judging-0.0.1-SNAPSHOT.jar /app/target/judging-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","/app/target/judging-0.0.1-SNAPSHOT.jar"]
+COPY --from=build /app/target/*.jar /app/app.jar
 EXPOSE 9000
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
