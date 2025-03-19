@@ -28,4 +28,5 @@ server:
 
 frontend:
   domain:
-    url: ${FRONTEND_DOMAIN_URL:http://localhost:5173}
+    url: https://nhatphi-nginx.io.vn/
+#    url: ${FRONTEND_DOMAIN_URL:http://localhost:5173}

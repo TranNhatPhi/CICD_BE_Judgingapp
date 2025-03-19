@@ -29,4 +29,5 @@ public class NotificationServiceNew {
         logger.info("Sending marking-round1 notification with content: {}", notificationMessage.getContent());
         messagingTemplate.convertAndSend("/topic/judge-marks", notificationMessage);
     }
+
 }

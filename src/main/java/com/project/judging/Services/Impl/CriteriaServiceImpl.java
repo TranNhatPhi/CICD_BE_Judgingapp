@@ -30,6 +30,7 @@ public class CriteriaServiceImpl implements CriteriaService {
         this.semesterRepository = semesterRepository;
     }
 
+
     @Override
     @Transactional(readOnly = true)
     public List<Criteria> showAllCriteria(Integer semesterId) {
@@ -91,4 +92,5 @@ public class CriteriaServiceImpl implements CriteriaService {
             throw new CustomException(HttpStatus.INTERNAL_SERVER_ERROR, "Error while deleting criteria: " + e.getMessage());
         }
     }
+
 }
