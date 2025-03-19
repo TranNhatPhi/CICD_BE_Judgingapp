@@ -13,7 +13,7 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI customOpenAPI() {
         Server server = new Server();
-        server.setUrl("http://localhost:9000");
+        server.setUrl("http://localhost:9000"); // cho nay de lam j ong
         server.setDescription("Development");
 
         Info information = new Info()
