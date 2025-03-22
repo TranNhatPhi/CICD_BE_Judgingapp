@@ -233,7 +233,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 //        configuration.setAllowedOriginPatterns(List.of("*"));
-        configuration.setAllowedOrigins(List.of(URL)); // Chỉ định rõ ràng origin từ frontend
+        configuration.setAllowedOrigins(List.of("https://nhatphi-nginx.io.vn")); // Chỉ định rõ ràng origin từ frontend
         configuration.setAllowedMethods(List.of("*"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
